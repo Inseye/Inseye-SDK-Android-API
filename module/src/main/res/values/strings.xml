@@ -1,0 +1,5 @@
+<resources>
+    <!--Must match with declarations in BoundService manifest-->
+    <string name="service_package_name">com.inseye.tracker_service</string>
+    <string name="service_class_name">com.inseye.tracker_service.InsEyeService</string>
+</resources>
