@@ -9,40 +9,48 @@ public enum TrackerAvailability implements Parcelable {
     // when adding new values to this enum always add them just before Unavailable
     // old events should never be removed but marked as obsolete instead
     /**
-     * Eyetracker is fully functional - gaze data can be provided, new calibration can be started
+     * Eyetracker is fully functional - gaze data can be provided, new calibration can be started.
      */
     Available,
     /**
-     * Eyetracker is physically disconnected from the headset
+     * Eyetracker is physically disconnected from the headset.
      */
     Disconnected,
     /**
-     * Eyetracker cannot provide gaze data because calibration is in progress
+     * Eyetracker cannot provide gaze data because calibration is in progress.
      */
     Calibrating,
     /**
-     * Eyetracker cannot provide gaze data because raw data is read
+     * @deprecated
+     * Eyetracker cannot provide gaze data because raw data is read.
      */
     RawData,
     /**
-     * Eyetracker is unavailable because eyetracker board firmware is being updated
+     * @deprecated
+     * Eyetracker is unavailable because eyetracker board firmware is being updated.
      */
     FirmwareUpdate,
     /**
      * Eye tracker is connected but is not yet available.
      */
-    Connected,
+    Unavailable,
     /**
-     * Eyetracker is unavailable. This flag should should only appear if client library is behind service library and new flags were added.
+     * Eye tracker is connected but not calibrated and gaze data is not available.
+     * Gaze data can be provided after calibration procedure.
      */
-    Unavailable; // this flag should always be the last flag in this enum, that's important for CREATOR implementation
+    NotCalibrated,
+    /**
+     * The eyetracker is connected but unavailable for unknown reason.
+     * This flag should should only appear if client library is behind service library and new flags were added.
+     */
+    Unknown; // this flag should always be the last flag in this enum, that's important for CREATOR implementation
 
     public static final Creator<TrackerAvailability> CREATOR = new Creator<TrackerAvailability>() {
         @Override
         public TrackerAvailability createFromParcel(Parcel in) {
             int ord = in.readInt();
-            if (ord >= Unavailable.ordinal()) // last element
-                return TrackerAvailability.Unavailable;
+            if (ord >= Unknown.ordinal()) // last element
+                return TrackerAvailability.Unknown;
             return TrackerAvailability.values()[ord];
         }
 

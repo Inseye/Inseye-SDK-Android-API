@@ -59,12 +59,12 @@ interface ISharedService {
     */
     Eye getDominantEye() = 9;
     /**
-    * Returns true if eye tracker is calibrated - model was trained on user behavioral input.
-    * Even if this enpoint renturs true a new calibration may be advised if user experiance degrades.
+    * @deprecated check tracker availability to get information if gaze data can be provided at given moment, will be removed in Service ver 1.x.x.
     */
     boolean isCalibrated() = 10;
 
-    /* Internal API
+    // Internal API for streaming raw data.
+    // Methods from this region may not be implemented in all versions of service and thus, may throw exceptions.
 
     /**
     * @deprecated use startStreamingRawData, will be removed in Service ver 1.x.x
@@ -108,5 +108,5 @@ interface ISharedService {
     * This endpoint may not be implemented in all versions of Inseye Service.
     */
     boolean isStreamingRawData() = 15;
-
+    // End of internal API for streaming gaze data.
 }
