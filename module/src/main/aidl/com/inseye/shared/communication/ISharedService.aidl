@@ -59,25 +59,13 @@ interface ISharedService {
     * Returns dominant eye or both if service was unable to determine which user eye is dominant.
     */
     Eye getDominantEye() = 9;
-    /**
-    * @deprecated check tracker availability to get information if gaze data can be provided at given moment, will be removed in Service ver 1.x.x.
-    */
-    boolean isCalibrated() = 10;
+    // 10 - removed from API, do not reuse
+    // 11 - removed from API, do not reuse
+    // 13 - removed from API, do not reuse
 
     // Internal API for streaming raw data.
     // Methods from this region may not be implemented in all versions of service and thus, may throw exceptions.
 
-    /**
-    * @deprecated use startStreamingRawData, will be removed in Service ver 1.x.x
-    * Begins recording raw data.
-    */
-    ActionResult beginRecordingRawData() = 11;
-    /**
-    * @deprecated use stopStreamingRawData, will be removed in Service ver 1.x.x
-    * Ends recording raw data.
-    * If data recording was finished succesfully then path to data file set in dataPath, otherwise dataPath is empty string.
-    */
-    StringActionResult endRecordingRawData() = 12; // string cannot be out because AIDL says so
     /**
     * Starts streaming raw data.
     * The caller specifies binary format of streamed data.
