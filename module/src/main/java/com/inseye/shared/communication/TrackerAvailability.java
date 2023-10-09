@@ -31,16 +31,8 @@ public enum TrackerAvailability implements Parcelable {
      * Eyetracker cannot provide gaze data because calibration is in progress.
      */
     Calibrating(2),
-    /**
-     * @deprecated
-     * Eyetracker cannot provide gaze data because raw data is read.
-     */
-    RawData(3),
-    /**
-     * @deprecated
-     * Eyetracker is unavailable because eyetracker board firmware is being updated.
-     */
-    FirmwareUpdate(4),
+    // 3 - removed, do not reuse
+    // 4 - removed, do not reuse
     /**
      * Eye tracker is connected but is not yet available.
      */
