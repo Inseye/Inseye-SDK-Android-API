@@ -1,3 +1,12 @@
+<!--
+  ~ Last edit: 02.10.2023, 13:24
+  ~ Copyright (c) Inseye Inc.
+  ~
+  ~ This file is part of Inseye Software Development Kit subject to Inseye SDK License
+  ~ See  https://github.com/Inseye/Licenses/blob/master/SDKLicense.txt.
+  ~ All other rights reserved.
+  -->
+
 <resources>
     <!--Must match with declarations in BoundService manifest-->
     <string name="service_package_name">com.inseye.tracker_service</string>

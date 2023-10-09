@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Last edit: 02.10.2023, 13:24
+  ~ Copyright (c) Inseye Inc.
+  ~
+  ~ This file is part of Inseye Software Development Kit subject to Inseye SDK License
+  ~ See  https://github.com/Inseye/Licenses/blob/master/SDKLicense.txt.
+  ~ All other rights reserved.
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.inseye.shared">
