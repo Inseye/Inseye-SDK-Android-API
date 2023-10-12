@@ -1,3 +1,12 @@
+/*
+ * Last edit: 02.10.2023, 13:40
+ * Copyright (c) Inseye Inc.
+ *
+ * This file is part of Inseye Software Development Kit subject to Inseye SDK License
+ * See  https://github.com/Inseye/Licenses/blob/master/SDKLicense.txt.
+ * All other rights reserved.
+ */
+
 package com.inseye.shared;
 
 import org.junit.Test;
@@ -7,11 +16,6 @@ import static org.junit.Assert.*;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
 public class ByteBufferExtensionsTests {
     @Test
     public void testUShortPutBigEndian() {
