@@ -10,59 +10,62 @@
 package com.inseye.shared.utils;
 
 import android.content.ComponentName;
-import android.content.ServiceConnection;
 import android.os.IBinder;
 
 import androidx.annotation.Nullable;
 
-public class PluggableServiceConnection implements ServiceConnection {
+public final class PluggableServiceConnection implements IPluggableServiceConnection {
 
-    private ServiceConnectedDelegate _serviceConnectedDelegate;
-    private ServiceDisconnectedDelegate _serviceDisconnectedDelegate;
-    private BindingDiedDelegate _bindingDiedDelegate;
-    private NullBindingDelegate _nullBindingDelegate;
+    private ServiceConnectedDelegate serviceConnectedDelegate;
+    private ServiceDisconnectedDelegate serviceDisconnectedDelegate;
+    private BindingDiedDelegate bindingDiedDelegate;
+    private NullBindingDelegate nullBindingDelegate;
 
+    @Override
     public void setServiceConnectedDelegate(@Nullable ServiceConnectedDelegate delegate)
     {
-        _serviceConnectedDelegate = delegate;
+        serviceConnectedDelegate = delegate;
     }
 
+    @Override
     public void setServiceDisconnectedDelegate(@Nullable ServiceDisconnectedDelegate delegate)
     {
-        _serviceDisconnectedDelegate = delegate;
+        serviceDisconnectedDelegate = delegate;
     }
 
+    @Override
     public void setBindingDiedDelegate(@Nullable BindingDiedDelegate delegate)
     {
-        _bindingDiedDelegate = delegate;
+        bindingDiedDelegate = delegate;
     }
 
+    @Override
     public void setNullBindingDelegate(@Nullable NullBindingDelegate delegate)
     {
-        _nullBindingDelegate = delegate;
+        nullBindingDelegate = delegate;
     }
 
     @Override
     public void onServiceConnected(ComponentName name, IBinder service) {
-        if (null != _serviceConnectedDelegate)
-            _serviceConnectedDelegate.onServiceConnected(name, service);
+        if (null != serviceConnectedDelegate)
+            serviceConnectedDelegate.onServiceConnected(name, service);
     }
 
     @Override
     public void onServiceDisconnected(ComponentName name) {
-        if (null != _serviceDisconnectedDelegate)
-            _serviceDisconnectedDelegate.onServiceDisconnected(name);
+        if (null != serviceDisconnectedDelegate)
+            serviceDisconnectedDelegate.onServiceDisconnected(name);
     }
 
     @Override
     public void onBindingDied(ComponentName name) {
-        if (null != _bindingDiedDelegate)
-            _bindingDiedDelegate.onBindingDied(name);
+        if (null != bindingDiedDelegate)
+            bindingDiedDelegate.onBindingDied(name);
     }
 
     @Override
     public void onNullBinding(ComponentName name) {
-        if (null != _nullBindingDelegate)
-            _nullBindingDelegate.onNullBinding(name);
+        if (null != nullBindingDelegate)
+            nullBindingDelegate.onNullBinding(name);
     }
 }
