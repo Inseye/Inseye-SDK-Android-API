@@ -9,6 +9,7 @@ import com.inseye.shared.communication.IEyetrackerEventListener;
 import com.inseye.shared.communication.IServiceCalibrationCallback;
 import com.inseye.shared.communication.Version;
 import com.inseye.shared.communication.Eye;
+import com.inseye.shared.communication.TrackerAvailability;
 
 parcelable StringActionResult;
 parcelable IntActionResult;

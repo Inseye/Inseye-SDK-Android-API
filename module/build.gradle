@@ -4,11 +4,11 @@ plugins {
 
 android {
     namespace 'com.inseye.shared'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         minSdk 27
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
