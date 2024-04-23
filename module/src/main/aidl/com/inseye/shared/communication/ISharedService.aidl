@@ -10,6 +10,8 @@ import com.inseye.shared.communication.IServiceCalibrationCallback;
 import com.inseye.shared.communication.Version;
 import com.inseye.shared.communication.Eye;
 import com.inseye.shared.communication.TrackerAvailability;
+import com.inseye.shared.communication.IServiceBuiltInCalibrationCallback;
+import com.inseye.shared.communication.IBuiltInCalibrationCallback;
 
 parcelable StringActionResult;
 parcelable IntActionResult;
@@ -28,12 +30,12 @@ interface ISharedService {
     */
     void stopStreamingGazeData() = 2;
     /**
-    * Returns positive value if service is streaming gaze positions at given UDP port otherwise returns -1.
+    * Returns positive value if service is streaming gaze positions at returned UDP port number otherwise returns -1.
     */
     int isStreamingGazeData() = 3;
     /**
     * Informs service that client is willing to perform calibration procedure.
-    * Client can perform callibration if this method returns succesful action result.
+    * Client can perform calibration if this method returns succesful action result.
     * IServiceCalibrationCallback field should not be null if ActionResult is successful.
     */
     IServiceCalibrationCallback startCalibrationProcedure(out ActionResult result, in ICalibrationCallback clientInterface) = 4;
@@ -43,7 +45,7 @@ interface ISharedService {
     ActionResult subscribeToEyetrackerEvents(in IEyetrackerEventListener listener) = 5;
     /**
     * Unsubscribes from eyetracking events.
-    * IEyetrackerEventHandler provided in subscription can be disposed after this call.
+    * IEyetrackerEventListener provided in subscription can be disposed after this call.
     */
     void unsubscribeFromEyetrackerEvents() = 6;
     /**
@@ -110,4 +112,12 @@ interface ISharedService {
     */
     boolean isStreamingRawData() = 15;
     // End of internal API for streaming gaze data.
+
+    /**
+    * Informs service that client requires eye tracker calibration using built-in calibration procedure.
+    * Client can perform calibration if this method returns successful action result.
+    * IServiceBuiltInCalibrationCallback field should not be null if ActionResult is successful.
+    */
+    IServiceBuiltInCalibrationCallback startBuiltInCalibrationProcedure(out ActionResult result, in IBuiltInCalibrationCallback clientInterface) = 16;
+
 }

@@ -1,5 +1,5 @@
 /*
- * Last edit: 02.10.2023, 13:24
+ * Last edit: 23.04.2024, 11:09 by Mateusz Chojnowski mateusz.chojnowski@inseye.com
  * Copyright (c) Inseye Inc.
  *
  * This file is part of Inseye Software Development Kit subject to Inseye SDK License
@@ -130,8 +130,9 @@ public class Version implements Parcelable {
         major = in.readInt();
         minor = in.readInt();
         patch = in.readInt();
-        extra = in.readString();
-        if (null == extra)
-            extra = "";
+        String extraString = in.readString();
+        if (null == extraString)
+            extraString = "";
+        extra = extraString;
     }
 }

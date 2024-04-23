@@ -1,5 +1,5 @@
 /*
- * Last edit: 02.10.2023, 13:40
+ * Last edit: 13.02.2024, 14:49 by Mateusz Chojnowski mateusz.chojnowski@inseye.com
  * Copyright (c) Inseye Inc.
  *
  * This file is part of Inseye Software Development Kit subject to Inseye SDK License

@@ -11,12 +11,12 @@ import com.inseye.shared.communication.CalibrationPoint;
 interface IServiceCalibrationCallback {
     /**
     * Informs service that client is ready to start recieving calibration points.
-    * Retuns success if service is willing to continue callibration.
+    * Retuns success if service is willing to continue calibration.
     */
     ActionResult readyToRecieveCalibrationPoint(out CalibrationPoint initialCalibrationPoint) = 0;
     /**
-    * Informs service that client is aborting callibration procedure and invalidates ICalibrationCallback provided in startCalibration.
-    * Retuns success if callibration was aborted.
+    * Informs service that client is aborting calibration procedure and invalidates ICalibrationCallback provided in startCalibration.
+    * Retuns success if calibration was aborted.
     */
     ActionResult abortCalibrationProcedure() = 1;
 }

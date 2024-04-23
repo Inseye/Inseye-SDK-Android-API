@@ -1,5 +1,5 @@
 /*
- * Last edit: 02.10.2023, 13:24
+ * Last edit: 23.04.2024, 11:09 by Mateusz Chojnowski mateusz.chojnowski@inseye.com
  * Copyright (c) Inseye Inc.
  *
  * This file is part of Inseye Software Development Kit subject to Inseye SDK License
@@ -43,7 +43,10 @@ public class ActionResult implements Parcelable {
 
     protected ActionResult(Parcel in) {
         successful = in.readByte() != 0;
-        errorMessage = in.readString();
+        String message = in.readString();
+        if (null == message)
+            message = "";
+        errorMessage = message;
     }
 
     public static final Creator<ActionResult> CREATOR = new Creator<ActionResult>() {
@@ -97,6 +100,9 @@ public class ActionResult implements Parcelable {
 
     public void readFromParcel(Parcel reply) {
         successful = reply.readByte() != 0;
-        errorMessage = reply.readString();
+        String message = reply.readString();
+        if(null == message)
+            message = "";
+        errorMessage = message;
     }
 }
