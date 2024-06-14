@@ -12,11 +12,13 @@ import com.inseye.shared.communication.Eye;
 import com.inseye.shared.communication.TrackerAvailability;
 import com.inseye.shared.communication.IServiceBuiltInCalibrationCallback;
 import com.inseye.shared.communication.IBuiltInCalibrationCallback;
+import com.inseye.shared.communication.VisibleFov;
 
 parcelable StringActionResult;
 parcelable IntActionResult;
 parcelable Eye;
 parcelable BinaryStreamActionResult;
+parcelable VisibleFov;
 
 interface ISharedService {
     /**
@@ -119,5 +121,7 @@ interface ISharedService {
     * IServiceBuiltInCalibrationCallback field should not be null if ActionResult is successful.
     */
     IServiceBuiltInCalibrationCallback startBuiltInCalibrationProcedure(out ActionResult result, in IBuiltInCalibrationCallback clientInterface) = 16;
+
+    VisibleFov getVisibleFov() = 17;
 
 }
