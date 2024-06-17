@@ -47,9 +47,6 @@ public class VisibleFov implements Parcelable {
     @NonNull
     @Override
     public String toString() {
-        return "VisibleFov{" +
-                "horizontal=" + horizontal +
-                ", vertical=" + vertical +
-                '}';
+        return "hFov=" + horizontal + ", vFov=" + vertical;
     }
 }

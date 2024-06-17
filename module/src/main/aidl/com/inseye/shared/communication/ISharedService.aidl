@@ -55,10 +55,10 @@ interface ISharedService {
     */
     TrackerAvailability getTrackerAvailability() = 7;
     /**
-    * Returns service and firmware version.
+    * Returns service, calibration and firmware version.
     * If no eye tracker is connected to service is should return 0.0.0-Unknown.
     */
-    void getVersions(out Version serviceVersion, out Version firmwareVersion) = 8;
+    void getVersions(out Version serviceVersion, out Version firmwareVersion, out Version calibrationVersion) = 8;
     /**
     * Returns dominant eye or both if service was unable to determine which user eye is dominant.
     */
