@@ -44,5 +44,12 @@ public class VisibleFov implements Parcelable {
         parcel.writeFloat(vertical);
     }
 
-
+    @NonNull
+    @Override
+    public String toString() {
+        return "VisibleFov{" +
+                "horizontal=" + horizontal +
+                ", vertical=" + vertical +
+                '}';
+    }
 }
