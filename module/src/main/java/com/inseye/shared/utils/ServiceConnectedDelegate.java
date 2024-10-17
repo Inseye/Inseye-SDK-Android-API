@@ -11,7 +11,11 @@ package com.inseye.shared.utils;
 
 import android.content.ComponentName;
 import android.os.IBinder;
-
+/**
+ * @deprecated
+ * This interface is not mandatory part of the library and will be removed.
+ */
+@Deprecated(forRemoval = true)
 public interface ServiceConnectedDelegate {
     void onServiceConnected(ComponentName name, IBinder service);
 }

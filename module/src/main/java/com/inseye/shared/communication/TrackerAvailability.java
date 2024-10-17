@@ -20,25 +20,25 @@ public enum TrackerAvailability implements Parcelable {
     // when adding new values to this enum always add them just before Unknown
     // old events should never be removed but marked as obsolete instead
     /**
-     * Eyetracker is fully functional - gaze data can be provided, new calibration can be started.
+     * Eye tracker is fully functional - gaze data can be provided, new calibration can be started.
      */
     Available(0),
     /**
-     * Eyetracker is physically disconnected from the headset.
+     * Eye tracker is physically disconnected from the headset.
      */
     Disconnected(1),
     /**
-     * Eyetracker cannot provide gaze data because calibration is in progress.
+     * Eye tracker cannot provide gaze data because calibration is in progress.
      */
     Calibrating(2),
     /**
      * @deprecated
-     * Eyetracker cannot provide gaze data because raw data is read.
+     * Eye tracker cannot provide gaze data because raw data is read.
      */
     RawData(3),
     /**
      * @deprecated
-     * Eyetracker is unavailable because eyetracker board firmware is being updated.
+     * Eye tracker is unavailable because eyetracker board firmware is being updated.
      */
     FirmwareUpdate(4),
     /**
