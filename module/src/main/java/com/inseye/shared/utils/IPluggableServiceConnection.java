@@ -11,6 +11,12 @@ package com.inseye.shared.utils;
 import android.content.ServiceConnection;
 import androidx.annotation.Nullable;
 
+/**
+ * @deprecated
+ * This class is not mandatory part of the library and will be removed.
+ * @noinspection removal
+ */
+@Deprecated(forRemoval = true)
 public interface IPluggableServiceConnection extends ServiceConnection {
     void setServiceConnectedDelegate(@Nullable ServiceConnectedDelegate delegate);
     void setServiceDisconnectedDelegate(@Nullable ServiceDisconnectedDelegate delegate);

@@ -8,7 +8,11 @@
  */
 
 package com.inseye.shared;
-
+/**
+ * @deprecated
+ * This class is not mandatory part of the library and will be removed.
+ */
+@Deprecated(forRemoval = true)
 public class ISharedServiceTagSource {
     public final String startStreamingGazeData;
     public final String stopStreamingGazeData;

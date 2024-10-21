@@ -19,7 +19,11 @@ parcelable IntActionResult;
 parcelable Eye;
 parcelable BinaryStreamActionResult;
 parcelable VisibleFov;
-
+/**
+* Interface for Inseye Android service.
+* Intent used to connect to Android service must be created with factory method.
+* @see com.inseye.shared.utils.ServiceConnectionIntentFactor
+*/
 interface ISharedService {
     /**
     * Starts streaming gaze data.

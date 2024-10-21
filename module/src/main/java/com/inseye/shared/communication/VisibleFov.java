@@ -1,12 +1,19 @@
 package com.inseye.shared.communication;
 
+import android.content.Context;
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
 public class VisibleFov implements Parcelable {
+    /**
+     * Device horizontal field of view in degrees.
+     */
     public float horizontal;
+    /**
+     * Device vertical field of view in degrees.
+     */
     public float vertical;
 
     protected VisibleFov(Parcel in) {

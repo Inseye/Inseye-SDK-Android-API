@@ -13,8 +13,16 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.util.Log;
 
+/**
+ * @deprecated
+ * This class is not mandatory part of the library and will be removed.
+ */
+@Deprecated(forRemoval = true)
 public final class IntentLogger {
     private IntentLogger() {}
+    /**
+     Logs intent into standard android logger.
+     */
     public static void LogIntent(String tag, Intent intent)
     {
         if (intent.getAction() != null)

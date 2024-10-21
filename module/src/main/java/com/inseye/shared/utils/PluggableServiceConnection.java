@@ -14,6 +14,13 @@ import android.os.IBinder;
 
 import androidx.annotation.Nullable;
 
+/**
+ * Utility class that allows dynamic replacement of ServiceConnection
+ * @deprecated
+ * This class is not mandatory part of the API and will be removed from the library.
+ * @noinspection deprecation
+ */
+@Deprecated(forRemoval = true)
 public final class PluggableServiceConnection implements IPluggableServiceConnection {
 
     private ServiceConnectedDelegate serviceConnectedDelegate;
