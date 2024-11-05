@@ -23,6 +23,17 @@ public final class ServiceConnectionIntentFactory {
      * Name of the filed in extra which holds intent identity.
      */
     public final static String INTENT_EXTRA_IDENTITY_NAME = "Identity";
+    /**
+     * Name of the filed in extra which holds intent client package name.
+     */
+    public final static String INTENT_EXTRA_PACKAGE_NAME = "client_package_name";
+
+    /**
+     * Name of the action which holds client type
+     */
+    public final static String LOCAL_CLIENT_BINDER = "local_client_binder";
+
+
 
     /**
      * Utility class that constructs intent that can be used to connect to Android Service.
@@ -41,11 +52,15 @@ public final class ServiceConnectionIntentFactory {
         intent.setComponent(component);
         UUID uuid = UUID.randomUUID();
         // TODO: Remove this 'if' when minimal client api is bumped to version above 29
+
+        intent.setAction(LOCAL_CLIENT_BINDER);
+        intent.putExtra(INTENT_EXTRA_PACKAGE_NAME, context.getPackageName());
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             intent.setIdentifier(uuid.toString());
         }
         else {
-            intent.putExtra("Identity", uuid.toString());
+            intent.putExtra(INTENT_EXTRA_IDENTITY_NAME, uuid.toString());
          }
         return intent;
     }
