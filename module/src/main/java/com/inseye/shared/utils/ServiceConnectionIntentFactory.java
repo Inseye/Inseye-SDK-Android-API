@@ -33,6 +33,12 @@ public final class ServiceConnectionIntentFactory {
      */
     public final static String LOCAL_CLIENT_BINDER = "local_client_binder";
 
+    /**
+     * Name of extra string field that contains any metadata that client wants to share with service.
+     * String passed to meta is not structured and may contain anything.
+     */
+    public final static String META = "meta";
+
 
 
     /**
