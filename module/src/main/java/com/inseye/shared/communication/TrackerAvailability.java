@@ -1,5 +1,5 @@
 /*
- * Last edit: 23.04.2024, 11:09 by Mateusz Chojnowski mateusz.chojnowski@inseye.com
+ * Last edit: 28.02.2025, 10:14 by Mateusz Chojnowski mateusz.chjojnowski@inseye.com
  * Copyright (c) Inseye Inc.
  *
  * This file is part of Inseye Software Development Kit subject to Inseye SDK License
@@ -32,29 +32,19 @@ public enum TrackerAvailability implements Parcelable {
      */
     Calibrating(2),
     /**
-     * @deprecated
-     * Eye tracker cannot provide gaze data because raw data is read.
-     */
-    RawData(3),
-    /**
-     * @deprecated
-     * Eye tracker is unavailable because eyetracker board firmware is being updated.
-     */
-    FirmwareUpdate(4),
-    /**
      * Eye tracker is connected but is not yet available.
      */
-    Unavailable(5),
+    Unavailable(3),
     /**
      * Eye tracker is connected but not calibrated and gaze data is not available.
      * Gaze data can be provided after calibration procedure.
      */
-    NotCalibrated(6),
+    NotCalibrated(4),
     /**
      * The eyetracker is connected but unavailable for unknown reason.
      * This flag should should only appear if client library is behind service library and new flags were added.
      */
-    Unknown(7); // this flag should always be the last flag in this enum, that's important for CREATOR implementation
+    Unknown(5); // this flag should always be the last flag in this enum, that's important for CREATOR implementation
     TrackerAvailability(int intValue)
     {
         value = intValue;

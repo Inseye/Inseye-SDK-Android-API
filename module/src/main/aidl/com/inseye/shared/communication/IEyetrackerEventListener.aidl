@@ -6,5 +6,5 @@ interface IEyetrackerEventListener {
     /**
     * Event raised when eyetracker availability changes.
     */
-    void handleTrackerAvailabilityChanged(in TrackerAvailability availability) = 0;
+    oneway void handleTrackerAvailabilityChanged(in TrackerAvailability availability) = 0;
 }
