@@ -11,7 +11,11 @@ package com.inseye.shared;
 
 import com.inseye.shared.communication.Version;
 
-public class ApiVersion {
+public final class ApiVersion {
     private ApiVersion() {}
-    public static Version ApiVersion = new Version(1, 0, 0, "rc1");
+
+    /**
+     * Version of the SDK API.
+     */
+    public static Version ApiVersion = new Version(1, 0, 0, "rc1dupa");
 }
