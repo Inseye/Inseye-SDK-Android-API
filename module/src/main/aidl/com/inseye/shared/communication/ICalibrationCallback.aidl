@@ -4,7 +4,6 @@ package com.inseye.shared.communication;
 // Declare any non-default types here with import statements
 import com.inseye.shared.communication.CalibrationPoint;
 import com.inseye.shared.communication.CalibrationPointResponse;
-import com.inseye.shared.communication.ActionResult;
 
 parcelable CalibrationPointResponse;
 
@@ -20,5 +19,5 @@ interface ICalibrationCallback {
     /**
     * Informs client that calibration procedure has finished.
     */
-    void finishCalibration(in ActionResult calibrationResult) = 1;
+    oneway void finishCalibration(boolean success, String errorMessage) = 1;
 }

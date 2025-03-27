@@ -4,6 +4,49 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+### Added
+
+- `getApiVersion` added to `ISharedService`, it returns service api implementation version and allows client to get information if it is compatible with service
+
+- `getRemoteObject` added to `ISharedService`, adds flexibility to the API and makes api future proof. For now there are no known public usages of this method.
+
+### Changed
+- major refactoring with breaking changes in main API
+
+- api changed from action result pattern to remote exceptions
+  
+- introduced `oneway` api calls in the API 
+
+### Removed
+- removed previously deprecated classes and interfaces:
+  + `IntentLogger`
+  + `BindingDiedDelegate`
+  + `IPluggableServiceConnection`
+  + `NullBindingDelegate`
+  + `PluggableServiceConnection`
+  + `ServiceConnectedDelegate`
+  + `ServiceDisconnectedDelegate`
+  + `ISharedServiceTagSource`
+
+- removed all obsolete types with `ActionResult` in name
+  + `IntActionResult`
+  + `StringActionResult`
+  + `BinaryStreamActionResult`
+  + `ActionResult`
+  + multiple function changed signature after type obsolesce 
+
+- removed all api parts related to raw data
+  + `RawDataV1`
+  + `beginRecordingRawData` from `ISharedService` 
+  + `endRecordingRawData` from `ISharedService`
+  + `startStreamingRawData` from `ISharedService`
+  + `stopStreamingRawData` from `ISharedService`  
+  + `isStreamingRawData` from `ISharedService`  
+
+
 ## [0.0.3] - 2024-11-06
 
 ### Changed
