@@ -66,17 +66,11 @@ public final class ServiceConnectionIntentFactory {
         ComponentName component = new ComponentName(res.getString(R.string.service_package_name), res.getString(R.string.service_class_name));
         intent.setComponent(component);
         UUID uuid = UUID.randomUUID();
-        // TODO: Remove this 'if' when minimal client api is bumped to version above 29
 
         intent.setAction(LOCAL_CLIENT_BINDER);
         intent.putExtra(INTENT_EXTRA_PACKAGE_NAME, context.getPackageName());
+        intent.setIdentifier(uuid.toString());
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            intent.setIdentifier(uuid.toString());
-        }
-        else {
-            intent.putExtra(INTENT_EXTRA_IDENTITY_NAME, uuid.toString());
-         }
         return intent;
     }
 }

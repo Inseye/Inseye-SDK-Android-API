@@ -90,7 +90,7 @@ public class Version implements Parcelable {
         extra = in.readString();
     }
 
-    public static final Creator<Version> CREATOR = new Creator<Version>() {
+    public static final Creator<Version> CREATOR = new Creator<>() {
         @Override
         public Version createFromParcel(Parcel in) {
             return new Version(in);
