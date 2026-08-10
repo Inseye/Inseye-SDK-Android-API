@@ -9,8 +9,7 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.inseye.shared">
+    xmlns:tools="http://schemas.android.com/tools">
     <!--Must match declarations in BoundService manifest-->
     <queries>
         <package android:name="com.inseye.tracker_service" />
