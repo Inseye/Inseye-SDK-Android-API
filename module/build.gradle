@@ -37,11 +37,13 @@ android {
         }
     }
 
+/*
     libraryVariants.configureEach { variant ->
         variant.outputs.all {
             outputFileName = "inseye_client_api_${variant.name}-${defaultConfig.versionName}.aar"
         }
     }
+*/
 }
 
 /*
@@ -60,25 +62,24 @@ android {
  */
 
 // this is for future mavenCentral or own maven publish repo
+/*
 publishing {
     publications {
-        create(MavenPublication) {
+        create('maven', MavenPublication) {
             groupId = 'com.inseye'
             artifactId = 'inseye-client-api'
             version = '0.0.3-alpha'
 
-            // This is the key line
-            afterEvaluate {
-                from components.release
-            }
+            from components.release
         }
     }
     repositories {
         maven {
-            url = uri("file://${rootProject.buildDir}/repo")
+            url = layout.buildDirectory.dir("repo")
         }
     }
 }
+*/
 
 dependencies {
 
